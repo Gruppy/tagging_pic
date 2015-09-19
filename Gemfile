@@ -16,6 +16,9 @@ gem 'bcrypt', '~> 3.1.7'
 gem 'rails-assets-bootstrap-sass-official'
 gem 'ransack'
 gem 'google-analytics-rails'
+gem 'therubyracer'            # javascript runtime。lessをコンパイルするために必要
+gem 'less-rails'              # Railsでlessを使えるようにする。Bootstrapがlessで書かれているため
+gem 'twitter-bootstrap-rails' # Bootstrapの本体
 
 group :development, :test do
   gem 'byebug'
