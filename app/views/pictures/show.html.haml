@@ -1,0 +1,36 @@
+.pictures-show-wrap
+  .container
+    .picture
+      = image_tag "#{params[:id]}.jpeg"
+    .tag
+      = form_for @tagging do |f|
+        = f.hidden_field :picture_id, :value => params[:id]
+
+        = f.radio_button :tag_value, 0
+        = f.label "大人一人"
+
+        = f.radio_button :tag_value, 1
+        = f.label "子供一人"
+
+        = f.radio_button :tag_value, 2
+        = f.label "人複数"
+
+        = f.radio_button :tag_value, 3
+        = f.label "犬"
+
+        = f.radio_button :tag_value, 4
+        = f.label "猫"
+
+        = f.radio_button :tag_value,5
+        = f.label "動物その他"
+
+        = f.radio_button :tag_value,6
+        = f.label "人の絵"
+
+        = f.radio_button :tag_value, 7
+        = f.label "絵その他"
+
+        = f.radio_button :tag_value, 8
+        = f.label "該当なし"
+
+        = f.submit "submit"
