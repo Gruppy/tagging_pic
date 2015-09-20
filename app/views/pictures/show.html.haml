@@ -7,34 +7,38 @@
         = f.hidden_field :picture_id, :value => params[:id]
         = f.hidden_field :picture_source, :value => @picture_source
 
-        = f.radio_button :tag_value, 0
-        = f.label "大人一人"
-
-        = f.radio_button :tag_value, 1
-        = f.label "子供一人"
-
-        = f.radio_button :tag_value, 2
-        = f.label "人複数"
-
-        = f.radio_button :tag_value, 3
-        = f.label "犬"
-
-        = f.radio_button :tag_value, 4
-        = f.label "猫"
-
-        = f.radio_button :tag_value,5
-        = f.label "動物その他"
-
-        = f.radio_button :tag_value,6
-        = f.label "人の絵"
-
-        = f.radio_button :tag_value, 7
-        = f.label "絵その他"
-
-        = f.radio_button :tag_value, 8
-        = f.label "該当なし"
-
-        = f.radio_button :tag_value, 9
-        = f.label "写真データなし"
+        %ul.tag-options
+          %li
+            = f.radio_button :tag_value, 0, id: 'single_adult'
+            = f.label "大人一人", for: 'single_adult'
+          %li
+            = f.radio_button :tag_value, 1, id: 'single_child'
+            = f.label "子供一人", for: 'single_child'
+          %li
+            = f.radio_button :tag_value, 2, id: 'people'
+            = f.label "複数人", for: 'people'
+          %li
+            = f.radio_button :tag_value, 3, id: 'dog'
+            = f.label "犬", for: 'dog'
+          %li
+            = f.radio_button :tag_value, 4, id: 'cat'
+            = f.label "猫", for: 'cat'
+          %li
+            = f.radio_button :tag_value,5, id: 'other_animal'
+            = f.label "動物その他", for: 'other_animal'
+          %li
+            = f.radio_button :tag_value,6, id: 'person_picture'
+            = f.label "人の絵", for: 'person_picture'
+          %li
+            = f.radio_button :tag_value, 7, id: 'other_picture'
+            = f.label "絵その他", for: 'other_picture'
+          %li
+            = f.radio_button :tag_value, 8, id: 'others'
+            = f.label "それ以外", for: 'others'
+          %li
+            = f.radio_button :tag_value, 9, id: 'no_data'
+            = f.label "写真データなし", for: 'no_data'
 
         = f.submit "submit"
+
+= javascript_include_tag 'pictures'
