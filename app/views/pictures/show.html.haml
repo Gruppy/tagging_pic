@@ -36,8 +36,8 @@
             = f.radio_button :tag_value, 8, id: 'others'
             = f.label "それ以外", for: 'others'
           %li
-            = f.radio_button :tag_value, 9, id: 'no_data'
-            = f.label "写真データなし", for: 'no_data'
+            = f.radio_button :tag_value, 9, id: 'pending'
+            = f.label "保留", for: 'pending'
 
         = f.submit "submit"
 
