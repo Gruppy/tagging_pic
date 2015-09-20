@@ -11,7 +11,7 @@ class TaggingsController < ApplicationController
   private
 
     def tagging_params
-      params.require(:tagging).permit(:user_id, :picture_id, :tag_value)
+      params.require(:tagging).permit(:user_id, :picture_id, :picture_source, :tag_value)
     end
 
     def next_picture_id

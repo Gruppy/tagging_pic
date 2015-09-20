@@ -1,10 +1,11 @@
 .pictures-show-wrap
   .container
     .picture
-      = image_tag "#{params[:id]}.jpeg"
+      = image_tag "#{@picture_source}.jpg"
     .tag
       = form_for @tagging do |f|
         = f.hidden_field :picture_id, :value => params[:id]
+        = f.hidden_field :picture_source, :value => @picture_source
 
         = f.radio_button :tag_value, 0
         = f.label "大人一人"
@@ -32,5 +33,8 @@
 
         = f.radio_button :tag_value, 8
         = f.label "該当なし"
+
+        = f.radio_button :tag_value, 9
+        = f.label "写真データなし"
 
         = f.submit "submit"
